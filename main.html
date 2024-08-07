@@ -4,150 +4,33 @@
 
 <head>
 	<link rel="stylesheet" href="styles.css">
-	    <style>
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .invalid-feedback {
-            color: red;
-            font-size: 0.875em;
-            display: none;
-        }
-        .error {
-            display: block;
-        }
-    </style>
-
 </head>
 
 <body>
 	<!-- the entire body must be written by student -->
-	    <h1>Intern Application Form</h1>
-    <form id="intern-form">
-        <div class="form-group">
-            <label for="first-name-input">First Name:</label>
-            <input type="text" id="first-name-input" name="first-name">
-            <div class="invalid-feedback" id="first-name-feedback">Please enter your first name.</div>
-        </div>
+	<div class="form-group">
+    <label for="email-input">Email Address:</label>
+    <input type="email" class="form-control" id="email-input" name="email">
+    <div class="invalid-feedback" id="email-feedback">Please enter a valid email address.</div>
+</div>
 
-        <div class="form-group">
-            <label for="last-name-input">Last Name:</label>
-            <input type="text" id="last-name-input" name="last-name">
-            <div class="invalid-feedback" id="last-name-feedback">Please enter your last name.</div>
-        </div>
+<div class="form-group">
+    <label for="grad-year-select">Graduation Year:</label>
+    <select class="form-control form-select" id="grad-year-select" name="graduation-year">
+        <option value="">Select Year</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+    </select>
+    <div class="invalid-feedback" id="graduation-year-feedback">Please select your graduation year.</div>
+</div>
 
-        <div class="form-group">
-            <label for="email-input">Email:</label>
-            <input type="email" id="email-input" name="email">
-            <div class="invalid-feedback" id="email-feedback">Please enter a valid email address.</div>
-        </div>
-
-        <div class="form-group">
-            <label for="college-input">College Name:</label>
-            <input type="text" id="college-input" name="college">
-            <div class="invalid-feedback" id="college-feedback">Please enter your college name.</div>
-        </div>
-
-        <div class="form-group">
-            <label for="roll-no-input">Roll No:</label>
-            <input type="text" id="roll-no-input" name="roll-no">
-            <div class="invalid-feedback" id="roll-no-feedback">Please enter your roll number.</div>
-        </div>
-
-        <div class="form-group">
-            <label for="graduation-year-input">Graduation Year:</label>
-            <select id="graduation-year-input" name="graduation-year">
-                <option value="">Select Year</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-            </select>
-            <div class="invalid-feedback" id="graduation-year-feedback">Please select your graduation year.</div>
-        </div>
-
-        <div class="form-group">
-            <input type="checkbox" id="conditions-checkbox" name="conditions">
-            <label for="conditions-checkbox">I agree to the terms and conditions.</label>
-            <div class="invalid-feedback" id="conditions-feedback">You must agree to the terms and conditions.</div>
-        </div>
-
-        <button type="submit">Submit</button>
-    </form>
-
-    <script>
-        document.getElementById('intern-form').addEventListener('submit', function(event) {
-            var isValid = true;
-
-            // Validate First Name
-            var firstName = document.getElementById('first-name-input').value.trim();
-            if (firstName === '') {
-                document.getElementById('first-name-feedback').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('first-name-feedback').classList.remove('error');
-            }
-
-            // Validate Last Name
-            var lastName = document.getElementById('last-name-input').value.trim();
-            if (lastName === '') {
-                document.getElementById('last-name-feedback').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('last-name-feedback').classList.remove('error');
-            }
-
-            // Validate Email
-            var email = document.getElementById('email-input').value.trim();
-            if (!email || !email.includes('@')) {
-                document.getElementById('email-feedback').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('email-feedback').classList.remove('error');
-            }
-
-            // Validate College Name
-            var college = document.getElementById('college-input').value.trim();
-            if (college === '') {
-                document.getElementById('college-feedback').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('college-feedback').classList.remove('error');
-            }
-
-            // Validate Roll No
-            var rollNo = document.getElementById('roll-no-input').value.trim();
-            if (rollNo === '') {
-                document.getElementById('roll-no-feedback').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('roll-no-feedback').classList.remove('error');
-            }
-
-            // Validate Graduation Year
-            var graduationYear = document.getElementById('graduation-year-input').value;
-            if (graduationYear === '') {
-                document.getElementById('graduation-year-feedback').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('graduation-year-feedback').classList.remove('error');
-            }
-
-            // Validate Checkbox
-            var conditions = document.getElementById('conditions-checkbox').checked;
-            if (!conditions) {
-                document.getElementById('conditions-feedback').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('conditions-feedback').classList.remove('error');
-            }
-
-            if (!isValid) {
-                event.preventDefault();
-            }
-        });
-    </script>
-
+<div class="form-group">
+    <input type="checkbox" class="form-check-input" id="conditions-checkbox" name="conditions">
+    <label for="conditions-checkbox">I agree to the terms and conditions.</label>
+    <div class="invalid-feedback" id="conditions-feedback">You must agree to the terms and conditions.</div>
+</div>
 
     <script type="text/javascript" src="./script.js">
 </script>
